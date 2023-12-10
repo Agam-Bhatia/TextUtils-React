@@ -47,15 +47,15 @@ export default function TextForm(props) {
             <div className="mb-3">
         <textarea className="form-control" style={{backgroundColor: props.mode==='dark'?'grey':'white', color: props.mode==='dark'?'white':'black'} || {backgorundColor: props.red ==='red'?'#cbcbcb':'white', color: props.red ==='red'?'black':''}} value={Text} onChange={handleOnChange} id="textBox" rows="8"></textarea>
             </div>
-            <button className="btn btn-primary mx-1" onClick={handleUpClick}>Convert to UpperCase</button>
-            <button className="btn btn-primary mx-1" onClick={handleDownClick}>Convert to LowerCase</button>
-            <button className="btn btn-primary mx-1" onClick={handleReverseClick}>Reverse text</button>
-            <button className="btn btn-primary mx-1" onClick={handleCapitalClick}>Capital text</button>
-            <button className="btn btn-primary mx-1" onClick={handleClearClick}>Clear text</button>
+            <button className="btn btn-primary mx-1 my-1" onClick={handleDownClick}>Convert to LowerCase</button>
+            <button className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>Convert to UpperCase</button>
+            <button className="btn btn-primary mx-1 my-1" onClick={handleReverseClick}>Reverse text</button>
+            <button className="btn btn-primary mx-1 my-1" onClick={handleCapitalClick}>Capital text</button>
+            <button className="btn btn-primary mx-1 my-1" onClick={handleClearClick}>Clear text</button>
         </div>
         <div className="container my-3" style= {{color: props.mode==='dark'?'white':'black'}}>
             <h2>Your Text Summary</h2>
-            <p>{Text.split(" ").length-1} words and {Text.length} characters</p>
+            <p>{Text.split(" ").filter((element)=>{ return element.length!==0}).length} words and {Text.length} characters</p>
             <h3>Preview</h3>
             <p>{Text}</p>
             <p>{Text.split(" ").length} words can be read in {0.008 * Text.split(" ").length} minutes or {0.48 * Text.split(" ").length} seconds</p>

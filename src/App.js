@@ -64,9 +64,10 @@ function App() {
       {/* <Navbar/> */}
       <Alert alert={alert}/>
       <div className="container my-3">
-        <Routes>
-          <Route exact path="/about" element={<About />}/>
+        <Routes> 
+          <Route exact path="/about" element={<About mode={mode}/>}/>
           <Route exact path="/" element={<TextForm showAlert={showAlert} heading="Enter the text below to analyze" mode={mode} red={red}/>}/>
+          {/* <TextForm showAlert={showAlert} heading="Enter the text below to analyze" mode={mode} red={red}/> */}
         </Routes>
       </div>
     </Router>
